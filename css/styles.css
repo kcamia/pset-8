@@ -86,6 +86,11 @@ h2 {
   cursor: pointer;
 }
 
+#scoreboard {
+  border: 1px solid black;
+  height: 100px;
+}
+
 /*
  * The reset button sits just below the board.
  */

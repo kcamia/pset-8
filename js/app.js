@@ -16,6 +16,9 @@ const winningConditions = [
 let board;
 let turn;
 let win;
+let player1score;
+let player2score;
+let tiedscore;
 
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 
@@ -49,6 +52,8 @@ function render() {
 
   message.textContent =
     win === "T" ? "It's a tie!" : win ? `${win} wins!` : `Turn: ${turn}`;
+
+  keepScore();
 }
 
 function takeTurn(e) {
@@ -81,4 +86,15 @@ function getWinner() {
   });
 
   return winner ? winner : board.includes("") ? null : "T";
+}
+
+function keepScore() {
+  player1score = Number(document.getElementById("player1-score"));
+  player2score = Number(document.getElementById("player2-score"));
+  tiedscore = Number(document.getElementById("tied-score"));
+
+  if (win === "T") {
+    tiedscore++;
+    render();
+  }
 }
