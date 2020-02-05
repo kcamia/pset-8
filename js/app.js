@@ -16,9 +16,7 @@ const winningConditions = [
 let board;
 let turn;
 let win;
-let player1score;
-let player2score;
-let tiedscore;
+let x;
 
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 
@@ -30,8 +28,24 @@ const message = document.querySelector("h2");
 window.onload = init;
 document.getElementById("board").onclick = takeTurn;
 document.getElementById("reset-button").onclick = init;
+document.getElementById("xFirst").onclick = xGoesFirst;
+document.getElementById("oFirst").onclick = oGoesFirst;
 
 ///////////////////// FUNCTIONS /////////////////////////////////////
+
+function xGoesFirst() {
+  if (turn === "") {
+    turn = "X";
+  }
+  render();
+}
+
+function oGoesFirst() {
+  if (turn === "") {
+    turn = "O";
+  }
+  render();
+}
 
 function init() {
   board = [
@@ -39,7 +53,8 @@ function init() {
     "", "", "",
     "", "", ""
   ];
-  turn = "X";
+  turn = "";
+
   win = null;
 
   render();
@@ -53,21 +68,22 @@ function render() {
   message.textContent =
     win === "T" ? "It's a tie!" : win ? `${win} wins!` : `Turn: ${turn}`;
 
-  keepScore();
 }
 
 function takeTurn(e) {
-  if (!win) {
-    let index = squares.findIndex(function(square) {
-      return square === e.target;
-    });
+  if (turn !== "") {
+    if (!win) {
+      let index = squares.findIndex(function(square) {
+        return square === e.target;
+      });
 
-    if (board[index] === "") {
-      board[index] = turn;
-      turn = turn === "X" ? "O" : "X";
-      win = getWinner();
+      if (board[index] === "") {
+        board[index] = turn;
+        turn = turn === "X" ? "O" : "X";
+        win = getWinner();
 
-      render();
+        render();
+      }
     }
   }
 }
@@ -86,15 +102,4 @@ function getWinner() {
   });
 
   return winner ? winner : board.includes("") ? null : "T";
-}
-
-function keepScore() {
-  player1score = Number(document.getElementById("player1-score"));
-  player2score = Number(document.getElementById("player2-score"));
-  tiedscore = Number(document.getElementById("tied-score"));
-
-  if (win === "T") {
-    tiedscore++;
-    render();
-  }
 }

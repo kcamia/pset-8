@@ -116,3 +116,19 @@ h2 {
   color: white;
   cursor: pointer;
 }
+
+#xFirst {
+  padding: inherit;
+  width: 20px;
+  margin-left: 2px;
+  border-radius: 2px;
+  background-color: white;
+}
+
+#oFirst {
+  padding: inherit;
+  width: 20px;
+  margin-right: 2px;
+  border-radius: 2px;
+  background-color: white;
+}
