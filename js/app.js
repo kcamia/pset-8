@@ -17,6 +17,9 @@ let board;
 let turn;
 let win;
 let x;
+let xScore = 0;
+let oScore = 0;
+let tieScore = 0;
 
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 
@@ -36,6 +39,7 @@ document.getElementById("oFirst").onclick = oGoesFirst;
 function xGoesFirst() {
   if (turn === "") {
     turn = "X";
+    document.getElementById("xFirst").style.backgroundColor = "green";
   }
   render();
 }
@@ -43,6 +47,7 @@ function xGoesFirst() {
 function oGoesFirst() {
   if (turn === "") {
     turn = "O";
+    document.getElementById("oFirst").style.backgroundColor = "red";
   }
   render();
 }
@@ -57,6 +62,9 @@ function init() {
 
   win = null;
 
+  document.getElementById("xFirst").style.backgroundColor = "white";
+  document.getElementById("oFirst").style.backgroundColor = "white";
+
   render();
 }
 
@@ -68,6 +76,23 @@ function render() {
   message.textContent =
     win === "T" ? "It's a tie!" : win ? `${win} wins!` : `Turn: ${turn}`;
 
+  if (win === "T") {
+    tieScore++;
+    let x = document.getElementById("tied-score");
+    x.innerHTML = tieScore;
+  }
+
+  if (win === "X") {
+    xScore++;
+    let y = document.getElementById("player1-score");
+    y.innerHTML = xScore;
+  }
+
+  if (win === "O") {
+    oScore++;
+    let z = document.getElementById("player2-score");
+    z.innerHTML = oScore;
+  }
 }
 
 function takeTurn(e) {
@@ -102,4 +127,6 @@ function getWinner() {
   });
 
   return winner ? winner : board.includes("") ? null : "T";
+
+
 }

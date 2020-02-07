@@ -31,6 +31,10 @@ h2 {
   margin: 2%;
 }
 
+button {
+  height: 30px;
+}
+
 /*
  * The container is a flex-box, which is a powerful layout tool. It grows
  * dyanamically, and allows us to position our elements with precision.
