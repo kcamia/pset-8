@@ -33,8 +33,12 @@ h2 {
 }
 
 button {
-  height: 30px;
+  font-size: 20px;
+  padding: 14px;
+  border-radius: 8px;
+  transition-duration: 0.4s;
 }
+
 
 /*
  * The container is a flex-box, which is a powerful layout tool. It grows
@@ -120,20 +124,4 @@ button {
   background-color: black;
   color: white;
   cursor: pointer;
-}
-
-#xFirst {
-  padding: inherit;
-  width: 20px;
-  margin-left: 2px;
-  border-radius: 2px;
-  background-color: white;
-}
-
-#oFirst {
-  padding: inherit;
-  width: 20px;
-  margin-right: 2px;
-  border-radius: 2px;
-  background-color: white;
 }
