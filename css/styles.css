@@ -62,11 +62,6 @@ button {
   flex-direction: column;       /* align children in columns instead of rows */
 }
 
-/*
- * This ensures that we get three rows of three squares, rather than a single
- * row of nine squares.
- */
-
 .wrap {
   flex-wrap: wrap;              /* tells container to drop down once it reaches max-width */
   height: 456px;
