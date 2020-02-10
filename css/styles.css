@@ -91,7 +91,7 @@ button {
  */
 
 .square:hover {
-  background-color: lightgray;
+  background-color: rgb(86, 163, 179);
   cursor: pointer;
 }
 
