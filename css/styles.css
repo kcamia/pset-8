@@ -105,7 +105,7 @@ button {
  */
 
 #reset-button {
-  background-color: white;
+  background-color: rgb(134, 217, 178);
   border: 1px solid black;
   color: black;
   font-size: 21px;
