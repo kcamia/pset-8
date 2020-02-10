@@ -101,10 +101,6 @@ button {
   background-color: white;
 }
 
-/*
- * The reset button sits just below the board.
- */
-
 #reset-button {
   background-color: rgb(134, 217, 178);
   border: 1px solid black;
