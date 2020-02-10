@@ -9,11 +9,6 @@ body {
   background-color: rgb(143, 203, 227);
 }
 
-/*
- * The header has a different font than the rest of the page. It's the
- * title, so it makes sense to make it a little different (and bigger).
- */
-
 h1 {
   margin: 0 auto;
   font-family: "Major Mono Display", monospace;
