@@ -121,7 +121,7 @@ button {
  */
 
 #reset-button:hover {
-  background-color: black;
+  background-color: rgb(100, 158, 131);
   color: white;
   cursor: pointer;
 }
