@@ -86,10 +86,6 @@ button {
   width: 150px;
 }
 
-/*
- * And we give it a little flare when the user mouses over a square.
- */
-
 .square:hover {
   background-color: rgb(86, 163, 179);
   cursor: pointer;
