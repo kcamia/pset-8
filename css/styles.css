@@ -116,11 +116,6 @@ button {
   width: 456px;
 }
 
-/*
- * And a little flare when the user mouses over the button. The color scheme
- * switches (background and foreground).
- */
-
 #reset-button:hover {
   background-color: rgb(100, 158, 131);
   color: white;
