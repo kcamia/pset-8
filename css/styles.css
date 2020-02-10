@@ -51,11 +51,6 @@ button {
   align-items: center;          /* center content vertically */
 }
 
-/*
- * We want to display the subheader, board, and reset button in a single
- * vertical column.
- */
-
 .column {
   height: 100%;
   width: 100%;
